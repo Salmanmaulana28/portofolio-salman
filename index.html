@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portofolio pribadi — software development, dan proyek digital.">
+  <title>Portfolio | Salman Maulana</title>
+  <style>
+    :root {
+      --bg: #090b12;
+      --panel: #111521;
+      --panel-2: #171d2b;
+      --text: #eef2ff;
+      --muted: #9aa6bd;
+      --accent: #8b7cff;
+      --accent-2: #45d6c5;
+      --line: rgba(255,255,255,.09);
+      --max: 1120px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background:
+        radial-gradient(circle at 80% 5%, rgba(139,124,255,.16), transparent 28rem),
+        radial-gradient(circle at 5% 45%, rgba(69,214,197,.08), transparent 24rem),
+        var(--bg);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.65;
+    }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(var(--max), calc(100% - 40px)); margin: auto; }
+    header {
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(9,11,18,.78); backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--line);
+    }
+    nav { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .brand { font-weight: 800; letter-spacing: -.04em; font-size: 1.2rem; }
+    .brand span { color: var(--accent); }
+    .navlinks { display: flex; gap: 26px; color: var(--muted); font-size: .92rem; }
+    .navlinks a:hover { color: var(--text); }
+    .hero { min-height: 660px; display: grid; grid-template-columns: 1.25fr .75fr; align-items: center; gap: 60px; padding: 90px 0; }
+    .eyebrow { color: var(--accent-2); text-transform: uppercase; letter-spacing: .18em; font-size: .76rem; font-weight: 800; }
+    h1 { font-size: clamp(2.8rem, 7vw, 5.5rem); line-height: 1.03; letter-spacing: -.065em; margin: 18px 0 24px; }
+    h1 span { color: var(--accent); }
+    .lead { max-width: 620px; color: var(--muted); font-size: 1.08rem; }
+    .actions { display: flex; flex-wrap: wrap; gap: 13px; margin-top: 32px; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; padding: 12px 19px; border-radius: 12px; font-weight: 750; border: 1px solid var(--line); transition: .2s; }
+    .btn.primary { background: var(--accent); color: #090b12; border-color: transparent; }
+    .btn:hover { transform: translateY(-3px); }
+    .profile-card {
+      position: relative; padding: 28px; border: 1px solid var(--line); border-radius: 26px;
+      background: linear-gradient(145deg, rgba(23,29,43,.95), rgba(12,15,24,.9));
+      box-shadow: 0 25px 80px rgba(0,0,0,.28);
+    }
+    .avatar {
+      width: 100%; height: 320px; border-radius: 20px; overflow: hidden;
+      background: linear-gradient(135deg, rgba(139,124,255,.3), rgba(69,214,197,.18));
+      border: 1px solid rgba(255,255,255,.12);
+    }
+    .avatar img {
+      width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block;
+    }
+    .profile-card h3 { margin-top: 20px; font-size: 1.25rem; }
+    .profile-card p { color: var(--muted); font-size: .92rem; }
+    .status { display: inline-flex; align-items: center; gap: 8px; margin-top: 18px; color: var(--accent-2); font-size: .82rem; }
+    .dot { width: 8px; height: 8px; background: var(--accent-2); border-radius: 50%; box-shadow: 0 0 14px var(--accent-2); }
+    section { padding: 82px 0; }
+    .section-head { margin-bottom: 32px; }
+    .section-head h2 { font-size: clamp(2rem, 4vw, 3rem); letter-spacing: -.05em; margin-top: 8px; }
+    .section-head p { color: var(--muted); max-width: 650px; margin-top: 8px; }
+    .about-grid, .project-grid, .skill-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .card { background: rgba(17,21,33,.86); border: 1px solid var(--line); border-radius: 20px; padding: 25px; }
+    .card h3 { font-size: 1.12rem; margin-bottom: 9px; }
+    .card p { color: var(--muted); }
+    .tag-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 17px; }
+    .tag { padding: 6px 10px; border-radius: 8px; background: rgba(139,124,255,.12); color: #c8c1ff; font-size: .78rem; }
+    .project-grid { grid-template-columns: repeat(2, 1fr); }
+    .project-card { min-height: 245px; display: flex; flex-direction: column; }
+    .project-icon { width: 46px; height: 46px; display: grid; place-items: center; border-radius: 13px; background: rgba(69,214,197,.12); color: var(--accent-2); font-size: 1.35rem; margin-bottom: 18px; }
+    .project-card p { flex: 1; }
+    .project-note { margin-top: 18px; color: var(--accent-2); font-size: .82rem; }
+    .skill-grid { grid-template-columns: repeat(3, 1fr); }
+    .skill-card { padding: 20px; }
+    .skill-card .symbol { color: var(--accent); font-size: 1.35rem; margin-bottom: 12px; }
+    .timeline { border-left: 1px solid rgba(139,124,255,.5); margin-left: 8px; padding-left: 25px; }
+    .timeline-item { position: relative; padding: 0 0 28px; }
+    .timeline-item::before { content: ""; position: absolute; width: 10px; height: 10px; border-radius: 50%; background: var(--accent); left: -31px; top: 8px; }
+    .timeline-item small { color: var(--accent-2); }
+    .timeline-item p { color: var(--muted); margin-top: 5px; }
+    .contact { text-align: center; padding: 55px 25px; background: linear-gradient(135deg, rgba(139,124,255,.14), rgba(69,214,197,.07)); border: 1px solid var(--line); border-radius: 25px; }
+    .contact h2 { font-size: clamp(2rem, 5vw, 3.2rem); letter-spacing: -.05em; }
+    .contact p { color: var(--muted); max-width: 600px; margin: 12px auto 24px; }
+    footer { padding: 28px 0; color: var(--muted); border-top: 1px solid var(--line); font-size: .85rem; }
+    footer .wrap { display: flex; justify-content: space-between; gap: 15px; flex-wrap: wrap; }
+    @media (max-width: 760px) {
+      .navlinks { gap: 13px; font-size: .8rem; }
+      .hero { grid-template-columns: 1fr; min-height: auto; padding: 75px 0; gap: 35px; }
+      .profile-card { max-width: 420px; }
+      .about-grid, .project-grid { grid-template-columns: 1fr; }
+      .skill-grid { grid-template-columns: repeat(2, 1fr); }
+      section { padding: 62px 0; }
+    }
+    @media (max-width: 440px) {
+      .wrap { width: min(100% - 28px, var(--max)); }
+      nav { min-height: 64px; }
+      .navlinks { gap: 10px; }
+      .navlinks a { font-size: .73rem; }
+      .skill-grid { grid-template-columns: 1fr 1fr; }
+      .card { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="wrap">
+      <a class="brand" href="#home">PORTO<span>FOLIO.</span></a>
+      <div class="navlinks">
+        <a href="#about">Tentang</a><a href="#skills">Skill</a><a href="#projects">Proyek</a><a href="#contact">Kontak</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="wrap hero" id="home">
+      <div>
+        <p class="eyebrow">Halo, selamat datang di portofolio saya</p>
+        <h1>Saya <span>Salman Maulana</span>.<br>Calon Software Developer.</h1>
+        <p class="lead">Lulusan SMK yang tertarik pada pengembangan perangkat lunak dan pembuatan aplikasi. Saya senang mempelajari teknologi baru dan mengubah ide menjadi produk digital yang bermanfaat.</p>
+        <div class="actions">
+          <a class="btn primary" href="#projects">Lihat Proyek</a>
+          <a class="btn" href="#contact">Hubungi Saya</a>
+        </div>
+      </div>
+      <aside class="profile-card">
+        <div class="avatar">
+          <img src="profil.jpeg" alt="Foto Profil Salman Maulana">
+        </div>
+        <h3>Salman Maulana</h3>
+        <p>Software Development Enthusiast</p>
+        <div class="status"><span class="dot"></span> Terus belajar dan berkembang</div>
+      </aside>
+    </section>
+
+    <section class="wrap" id="about">
+      <div class="section-head">
+        <p class="eyebrow">01 / Tentang Saya</p>
+        <h2>Mengenal saya lebih dekat.</h2>
+        <p>Saya memiliki ketertarikan pada dunia teknologi, terutama pemrograman, pengembangan website, dan pembuatan aplikasi.</p>
+      </div>
+      <div class="about-grid">
+        <article class="card">
+          <h3>Latar Belakang</h3>
+          <p>Saya merupakan lulusan SMK yang ingin terus mengembangkan kemampuan di bidang teknologi informasi. Saya pernah menjalani kegiatan Praktik Kerja Lapangan (PKL) di PT Inovindo Digital Media.</p>
+        </article>
+        <article class="card">
+          <h3>Fokus Saat Ini</h3>
+          <p>Saat ini saya berfokus mempelajari pengembangan aplikasi dan website, menyusun antarmuka yang mudah digunakan, serta memahami proses pembuatan software dari perencanaan hingga pengujian.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="wrap" id="skills">
+      <div class="section-head">
+        <p class="eyebrow">02 / Keahlian</p>
+        <h2>Teknologi yang saya pelajari.</h2>
+        <p>Daftar teknologi yang pernah saya gunakan atau sedang saya pelajari. Tingkat penguasaan dapat disesuaikan dengan kemampuan sebenarnya.</p>
+      </div>
+      <div class="skill-grid">
+        <article class="card skill-card"><div class="symbol">⌘</div><h3>PHP</h3><p>Dasar pengembangan web dan pemrograman sisi server.</p></article>
+        <article class="card skill-card"><div class="symbol">JS</div><h3>JavaScript & Node.js</h3><p>Dasar pemrograman JavaScript dan runtime Node.js.</p></article>
+        <article class="card skill-card"><div class="symbol">&lt;/&gt;</div><h3>HTML & CSS</h3><p>Membangun struktur halaman web dan merancang tampilan yang responsif.</p></article>
+        <article class="card skill-card"><div class="symbol">⑂</div><h3>Git</h3><p>Dasar version control untuk mengelola kode proyek.</p></article>
+        <article class="card skill-card"><div class="symbol">▣</div><h3>Problem Solving</h3><p>Belajar menganalisis masalah dan mencari solusi secara bertahap.</p></article>
+      </div>
+    </section>
+
+    <section class="wrap" id="projects">
+      <div class="section-head">
+        <p class="eyebrow">03 / Proyek</p>
+        <h2>Beberapa hal yang saya kerjakan.</h2>
+        <p>Bagian ini bisa kamu isi dengan proyek yang benar-benar sudah dibuat. Untuk sekarang, contoh berikut disusun berdasarkan proyek dan minat yang pernah kamu ceritakan.</p>
+      </div>
+      <div class="project-grid">
+        <article class="card project-card">
+          <div class="project-icon">&lt;/&gt;</div>
+          <h3>Web Development Practice</h3>
+          <p>Kumpulan latihan dan eksperimen membuat halaman web, mulai dari struktur HTML, styling CSS, hingga interaksi dasar menggunakan JavaScript.</p>
+          <div class="tag-row"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div>
+          <div class="project-note">Learning project</div>
+        </article>
+      </div>
+    </section>
+
+    <section class="wrap" id="experience">
+      <div class="section-head">
+        <p class="eyebrow">04 / Pengalaman</p>
+        <h2>Perjalanan saya.</h2>
+      </div>
+      <div class="card timeline">
+        <div class="timeline-item">
+          <small>Praktik Kerja Lapangan</small>
+          <h3>PT Inovindo Digital Media</h3>
+          <p>Menjalani pengalaman PKL di perusahaan yang bergerak di bidang teknologi. Tambahkan periode, tugas, teknologi yang digunakan, dan hal yang dipelajari selama PKL.</p>
+        </div>
+        <div class="timeline-item">
+          <small>Pengembangan Diri</small>
+          <h3>Belajar Software Development</h3>
+          <p>Mempelajari pemrograman, pengembangan website dan aplikasi, penggunaan Git, serta proses pemecahan masalah melalui latihan dan proyek pribadi.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap" id="contact">
+      <div class="contact">
+        <p class="eyebrow">05 / Kontak</p>
+        <h2>Mari terhubung.</h2>
+        <p>Terbuka untuk berdiskusi, berbagi ide, dan kesempatan belajar atau berkolaborasi di bidang teknologi.</p>
+        <div class="actions" style="justify-content:center">
+          <a class="btn primary" href="mailto:salmanmln202@gmail.com">Kirim Email</a>
+          <a class="btn" href="https://github.com/Salmanmaulana28" target="_blank" rel="noreferrer">GitHub</a>
+          <a class="btn" href="https://www.linkedin.com/in/salman-maulana-b70211449" target="_blank" rel="noreferrer">LinkedIn</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap"><span>© <span id="year"></span> Salman Maulana</span><span>Dibuat dengan HTML, CSS, dan JavaScript.</span></div>
+  </footer>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
