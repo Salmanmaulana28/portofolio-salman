@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portofolio | Calling Card Edition</title>
+  <meta name="description" content="Website portofolio bertema Persona 5 Royal">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Permanent+Marker&family=Playfair+Display:wght@900&family=Rajdhani:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Splash: klik / enter dulu -->
+  <div class="splash" id="splash">
+    <div class="splash-bg" aria-hidden="true"></div>
+    <div class="splash-inner">
+      <h1 data-ransom>TAKE YOUR HEART</h1>
+      <button class="enter" id="enter">
+        <span>CLICK TO ENTER ►</span>
+      </button>
+      <p class="splash-key-hint">Tekan tombol <kbd>ENTER</kbd> atau Klik untuk Masuk</p>
+      <p class="splash-note">🔊 Audio bisa di nonaktif</p>
+    </div>
+  </div>
+
+  <!-- Transisi layar -->
+  <div class="wipe" id="wipe" aria-hidden="true"><i></i><i></i><i></i></div>
+
+  <div class="halftone" aria-hidden="true"></div>
+  <div class="slash slash-a" aria-hidden="true"></div>
+  <div class="slash slash-b" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <a class="brand" href="#home" data-sfx="select"><b>SALMAN</b><i>MAULANA</i></a>
+    <nav class="top-links" aria-label="Navigasi cepat">
+      <a href="#profile" data-sfx="hover">PROFILE</a>
+      <a href="#skills" data-sfx="hover">SKILLS</a>
+      <a href="#palaces" data-sfx="hover">PROJECT</a>
+      <a href="#contact" data-sfx="hover">CONTACT</a>
+    </nav>
+    <div class="audio-ctl">
+      <button id="btn-sfx" class="chip on" aria-pressed="true" title="Efek suara">SFX</button>
+      <button id="btn-music" class="chip" aria-pressed="false" title="Musik latar">MUSIC</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="home" class="hero">
+      <div class="hero-text">
+        <p class="eyebrow">PORTFOLIO &mdash; PHANTOM EDITION</p>
+        
+        <!-- NAMA 2 JAJAR (BARIS) -->
+        <h2 class="name-two-lines">
+          <div data-ransom>SALMAN</div>
+          <div data-ransom>MAULANA</div>
+        </h2>
+
+        <p class="role"><span>WEB DEVELOPER</span><span>UI ENTHUSIAST</span></p>
+        <p class="tagline">Mencuri perhatian lewat web yang rapi, cepat, dan penuh gaya.</p>
+      </div>
+
+      <nav class="menu" aria-label="Menu utama">
+        <ul id="menu">
+          <li class="active"><a href="#profile" data-target="profile"><i>★</i>PROFILE</a></li>
+          <li><a href="#skills" data-target="skills"><i>★</i>SKILLS</a></li>
+          <li><a href="#palaces" data-target="palaces"><i>★</i>PROJECT</a></li>
+          <li><a href="#contact" data-target="contact"><i>★</i>CONTACT</a></li>
+        </ul>
+        <div class="hint-box">
+          <p><kbd>↑</kbd><kbd>↓</kbd> Pilih Menu &nbsp;|&nbsp; <kbd>ENTER</kbd> Buka</p>
+          <p><kbd>ESC</kbd> Kembali ke Awal</p>
+        </div>
+      </nav>
+    </section>
+
+    <!-- PROFILE -->
+    <section id="profile" class="section">
+      <h2 class="title"><span>PROFILE</span></h2>
+      <div class="profile-grid reveal">
+        <div class="portrait">
+          <!-- Foto Profil bergaya Persona 5 -->
+          <div class="photo-frame">
+            <!-- Ganti src dengan foto milikmu -->
+            <img src="salman.jpeg" alt="Foto Salman Maulana" class="user-photo" onerror="this.onerror=null; this.src='https://via.placeholder.com/250x300/141414/ffffff?text=FOTO+KAMU';">
+            <div class="photo-overlay"></div>
+          </div>
+          <p class="codename">CODENAME: <b>SALMAN MAULANA</b></p>
+          <p class="lvl">LV <b>18</b></p>
+        </div>
+        <div class="card">
+          <p>
+            Halo! Aku <strong>Salman Maulana</strong>, Lulusan SMKN 1 Kawali jurusan Pengembangan Perangkat Lunak dan Gim (PPLG) yang memiliki pengetahuan dasar dalam PHP, Laravel, HTML, CSS, dan MySQL. Memiliki minat dalam pengembangan perangkat lunak dan web serta ingin berkontribusi dalam pengembangan aplikasi dan solusi teknologi. Memiliki pengalaman mengerjakan proyek pengembangan situs web dan terbiasa belajar serta mengembangkan keterampilan baru.
+          </p>
+          <ul class="facts">
+            <li><span>LOKASI</span><b>Indonesia</b></li>
+            <li><span>FOKUS</span><b>Web Developer</b></li>
+            <li><span>PENDIDIKAN</span><b>SMK NEGERI 1 KAWALI</b></li>
+            <li><span>STATUS</span><b>Open to work</b></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+<!-- SKILLS -->
+    <section id="skills" class="section">
+      <h2 class="title"><span>SKILLS</span></h2>
+      
+      <div class="skills-container reveal">
+        <!-- HARD SKILLS -->
+        <div class="skill-category">
+          <h3 class="category-title"><span> HARD SKILLS</span></h3>
+          <div class="skills-grid">
+            <div class="skill" data-rank="5">
+              <div class="skill-head"><span>HTML &amp; CSS</span><b class="rank">RANK 5</b></div>
+              <div class="pips"></div>
+            </div>
+            <div class="skill" data-rank="4">
+              <div class="skill-head"><span>PHP</span><b class="rank">RANK 4</b></div>
+              <div class="pips"></div>
+            </div>
+            <div class="skill" data-rank="3">
+              <div class="skill-head"><span>Laravel</span><b class="rank">RANK 3</b></div>
+              <div class="pips"></div>
+            </div>
+            <div class="skill" data-rank="3">
+              <div class="skill-head"><span>MySQL</span><b class="rank">RANK 3</b></div>
+              <div class="pips"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SOFT SKILLS -->
+        <div class="skill-category">
+          <h3 class="category-title"><span> SOFT SKILLS</span></h3>
+          <div class="skills-grid">
+            <div class="skill soft" data-rank="5">
+              <div class="skill-head"><span>Problem Solving</span><b class="rank">RANK 5</b></div>
+              <div class="pips"></div>
+            </div>
+            <div class="skill soft" data-rank="4">
+              <div class="skill-head"><span>Teamwork</span><b class="rank">RANK 4</b></div>
+              <div class="pips"></div>
+            </div>
+            <div class="skill soft" data-rank="4">
+              <div class="skill-head"><span>Adaptability</span><b class="rank">RANK 4</b></div>
+              <div class="pips"></div>
+            </div>
+            <div class="skill soft" data-rank="5">
+              <div class="skill-head"><span>Time Management</span><b class="rank">RANK 5</b></div>
+              <div class="pips"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="palaces" class="section">
+      <h2 class="title"><span>PROJECT</span></h2>
+      <div class="palaces">
+        <article class="palace reveal">
+          <span class="tag-treasure">TREASURE</span>
+          <h3>Personal Web Portofollio</h3>
+          <p>Website portofolio pribadi yang dibuat untuk menampilkan profil diri, keterampilan, pengalaman, dan hasil proyek yang telah dikerjakan. Website ini dirancang dengan tampilan modern, sederhana, dan responsif agar pengunjung dapat mengenal kemampuan serta karya yang dimiliki dengan mudah.</p>
+          <div class="tags"><span>HTML</span><span>CSS</span><span>JS</span></div>
+        </article>
+        <article class="palace reveal">
+          <span class="tag-treasure">TREASURE</span>
+          <h3>Website Company Profile</h3>
+          <p>Website profil perusahaan yang dirancang dengan tampilan modern dan responsif untuk menampilkan informasi perusahaan, layanan, serta aktivitas bisnis. Dibangun dengan antarmuka yang bersih dan navigasi yang mudah digunakan sehingga memberikan pengalaman menjelajah yang nyaman di berbagai perangkat, baik desktop maupun mobile.</p>
+          <div class="tags"><span>Laravel</span><span>MySQL</span><span>PHP</span></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <h2 class="title"><span>CONTACT</span></h2>
+      <div class="calling-card reveal">
+        <div class="cc-left">
+          <h3 data-ransom>CALL ME</h3>
+          <p>Punya ide atau mau kolaborasi? Kirim pesan, nanti aku balas secepatnya.</p>
+          <ul class="links">
+            <li><a href="mailto:salmanmln202@gmail.com" data-sfx="hover">✉ salmanmln202@gmail.com</a></li>
+            <li><a href="https://github.com/Salmanmaulana28" target="_blank" rel="noopener" data-sfx="hover">⌘ github.com/Salmanmaulana28</a></li>
+            <li><a href="https://www.linkedin.com/in/salman-maulana-b70211449/" target="_blank" rel="noopener" data-sfx="hover">in linkedin.com/in/salman maulana</a></li>
+          </ul>
+        </div>
+        <form class="cc-form" id="contact-form">
+          <label>NAMA<input type="text" name="nama" required></label>
+          <label>PESAN<textarea name="pesan" rows="4" required></textarea></label>
+          <button type="submit" class="btn btn-red">KIRIM PESAN ►</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> Salman Maulana &mdash; Persona 5 Royal Style Portfolio. Tekan <kbd>ESC</kbd> kapan saja untuk kembali ke atas.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
